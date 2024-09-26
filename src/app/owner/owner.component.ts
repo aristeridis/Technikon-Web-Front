@@ -13,10 +13,16 @@ export class OwnerComponent implements OnInit{
 service=inject(OwnerService);
 owners:any;
 
+// ngOnInit(): void {
+//     this.service.getUsersFromPublicUrl().subscribe({
+//       next: response => this.owners =response,
+//       error:err=> console.error("something wrong ${err}")
+//     });
+// }
 ngOnInit(): void {
-    this.service.getUsersFromPublicUrl().subscribe({
-      next: response => this.owners =response,
-      error:err=> console.error("something wrong ${err}")
+    this.service.getPropertiesByOwnerId().subscribe({
+      next:response=>this.owners.response,
+      error:err=>console.error("Error getting property by owners id ${err}")
     });
 }
 
