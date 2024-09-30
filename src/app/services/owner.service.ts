@@ -7,8 +7,8 @@ import { inject, Injectable } from '@angular/core';
 export class OwnerService {
   http = inject(HttpClient);
 
-  urlForPropertyByOwnerId="http://localhost:8080/TechnikonWeb/resources/Owner/"
-   // url = 'https://reqres.in/api/users/2';
+  urlForPropertyByOwnerId ="http://localhost:8080/TechnikonWeb/resources/Owner/1"
+    // url = 'https://reqres.in/api/users/2';
   // getUsersFromPublicUrl(){
   //   return this.http.get(this.url);
   // }

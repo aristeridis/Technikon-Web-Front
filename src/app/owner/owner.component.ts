@@ -21,7 +21,7 @@ owners:any;
 // }
 ngOnInit(): void {
     this.service.getPropertiesByOwnerId().subscribe({
-      next:response=>this.owners.response,
+      next:response=>this.owners=response,
       error:err=>console.error("Error getting property by owners id ${err}")
     });
 }
