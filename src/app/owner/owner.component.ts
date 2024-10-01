@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OwnerService } from '../services/owner.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-owner',
@@ -13,7 +14,7 @@ export class OwnerComponent {
   ownerId: number | null = null;
   propertyId: number | null = null;
   ownerService=inject(OwnerService);
-
+  constructor(private router: Router) { }
   getProperties(): void {
     if (this.ownerId !== null) {
       alert('Properties found');
@@ -37,5 +38,10 @@ export class OwnerComponent {
     } else {
       alert('Please enter a valid Property ID');
     }
+  }
+  goToCreate():void{
+    this.router.navigate(['create-property']);
+
+
   }
 }
