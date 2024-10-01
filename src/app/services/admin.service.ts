@@ -8,9 +8,9 @@ export class AdminService {
 
   constructor() { }
   http = inject(HttpClient);
-  urlAdminPendingRepairs = "http://localhost:8080/TechnikonWeb/resources/Admin/dayRepairs"
   getPendingRepairs() {
-    return this.http.get(this.urlAdminPendingRepairs);
+    const urlAdminPendingRepairs = "http://localhost:8080/TechnikonWeb/resources/Admin/dayRepairs";
+    return this.http.get(urlAdminPendingRepairs);
   }
 
 }

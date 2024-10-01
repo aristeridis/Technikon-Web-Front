@@ -16,7 +16,7 @@ export class OwnerService {
   }
 
   deleteProperty(propertyId: number): Observable<any> {
-    const url = `${this.urlOwner}/${propertyId}`;
+    const url = `${this.urlOwner}/property/${propertyId}`;
     return this.http.delete(url);
 
   }

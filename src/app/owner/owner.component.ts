@@ -14,7 +14,7 @@ export class OwnerComponent {
   propertyId: number | null = null;
   ownerService=inject(OwnerService);
 
-  getProperies(): void {
+  getProperties(): void {
     if (this.ownerId !== null) {
       alert('Properties found');
       window.location.href = `http://localhost:8080/TechnikonWeb/resources/Owner/${this.ownerId}`;
