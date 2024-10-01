@@ -41,7 +41,8 @@ export class OwnerComponent {
   }
   goToCreate():void{
     this.router.navigate(['create-property']);
-
-
+  }
+  goToUpdate(): void {
+    this.router.navigate(['update-property']);
   }
 }

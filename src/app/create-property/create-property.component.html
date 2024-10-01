@@ -2,36 +2,31 @@
   <h1>Create Property</h1>
 
   <form (ngSubmit)="postData()">
-    <!-- Property ID -->
+    <label for="ownerId">Owner ID:</label>
+    <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" required>
     <label for="propertyId">Property ID:</label>
     <input type="number" id="propertyId" [(ngModel)]="property.propertyId" name="propertyId" required>
 
-    <!-- Property Code -->
     <label for="propertyCode">Property Code:</label>
     <input type="number" id="propertyCode" [(ngModel)]="property.propertyCode" name="propertyCode" required>
 
-    <!-- Address -->
     <label for="address">Address:</label>
     <input type="text" id="address" [(ngModel)]="property.address" name="address" required>
 
-    <!-- Year of Construction -->
     <label for="yearOfConstruction">Year of Construction:</label>
     <input type="number" id="yearOfConstruction" [(ngModel)]="property.yearOfConstruction" name="yearOfConstruction" required>
 
-    <!-- Property Type -->
     <label for="propertyType">Property Type:</label>
-    <input type="text" id="propertyType" [(ngModel)]="property.propertyType" name="propertyType" required>
+    <input type="text" id="propertyType" [(ngModel)]="property.propertyType" name="propertyType">
 
-    <!-- E9 -->
     <label for="e9">E9:</label>
     <input type="number" id="e9" [(ngModel)]="property.e9" name="e9" required>
 
-    <!-- Deleted Property -->
     <label for="deletedProperty">Deleted Property:</label>
     <input type="checkbox" id="deletedProperty" [(ngModel)]="property.deletedProperty" name="deletedProperty">
 
     <button type="submit">Submit</button>
   </form>
 
-  <pre>{{ property | json }}</pre> <!-- For debugging purposes, you can remove this -->
+  <pre>{{ property | json }}</pre>
 </div>
