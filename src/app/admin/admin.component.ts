@@ -15,7 +15,7 @@ export class AdminComponent {
   ngOnInit(): void {
     this.service.getPendingRepairs().subscribe({
       next: response => this.admin = response,
-      error: err => console.error("Error getting property by owners id ${err}")
+      error: err => console.error("Error getting pending repairs")
     });
   }
 }

@@ -1,29 +1,41 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { OwnerService } from '../services/owner.service';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-owner',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [FormsModule],
   templateUrl: './owner.component.html',
-  styleUrl: './owner.component.css'
+  styleUrls: ['./owner.component.css']
 })
-export class OwnerComponent implements OnInit{
-service=inject(OwnerService);
-owners:any;
+export class OwnerComponent {
+  ownerId: number | null = null;
+  propertyId: number | null = null;
+  ownerService=inject(OwnerService);
 
-// ngOnInit(): void {
-//     this.service.getUsersFromPublicUrl().subscribe({
-//       next: response => this.owners =response,
-//       error:err=> console.error("something wrong ${err}")
-//     });
-// }
-ngOnInit(): void {
-    this.service.getPropertiesByOwnerId().subscribe({
-      next:response=>this.owners=response,
-      error:err=>console.error("Error getting property by owners id ${err}")
-    });
-}
-
+  getProperies(): void {
+    if (this.ownerId !== null) {
+      alert('Properties found');
+      window.location.href = `http://localhost:8080/TechnikonWeb/resources/Owner/${this.ownerId}`;
+    } else {
+      alert('Please enter a valid id');
+    }
+  }
+  deleteProperty(): void {
+    if (this.propertyId !== null) {
+      this.ownerService.deleteProperty(this.propertyId).subscribe({
+        next: () => {
+          alert('Property deleted successfully');
+          window.location.href = `http://localhost:8080/TechnikonWeb/resources/Owner/property/${this.propertyId}`;
+        },
+        error: (err: any) => {
+          console.error('Error deleting property:', err);
+          alert('Failed to delete property. Please try again.');
+        },
+      });
+    } else {
+      alert('Please enter a valid Property ID');
+    }
+  }
 }

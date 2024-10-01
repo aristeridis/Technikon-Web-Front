@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,13 +8,17 @@ import { inject, Injectable } from '@angular/core';
 export class OwnerService {
   http = inject(HttpClient);
 
-  urlForPropertyByOwnerId ="http://localhost:8080/TechnikonWeb/resources/Owner/1"
-    // url = 'https://reqres.in/api/users/2';
-  // getUsersFromPublicUrl(){
-  //   return this.http.get(this.url);
-  // }
-  getPropertiesByOwnerId(){
-    return this.http.get(this.urlForPropertyByOwnerId);
+  urlOwner = "http://localhost:8080/TechnikonWeb/resources/Owner"
+
+  getPropertiesByOwnerId(ownerId: number): Observable<any> {
+    const url = `${this.urlOwner}/${ownerId}`;
+    return this.http.get(url);
+  }
+
+  deleteProperty(propertyId: number): Observable<any> {
+    const url = `${this.urlOwner}/${propertyId}`;
+    return this.http.delete(url);
+
   }
 
 }

@@ -1,4 +1,23 @@
-<div owners>
-    <h3>Owners and Properties:</h3>
-    <pre>{{ owners | json }}</pre> <!-- Using the JsonPipe to display the data -->
+<div class="owner">
+    <h1>Technikon Web</h1><br/>
+  <h2>Owner Page fanctionality</h2><br/>
+  <form (ngSubmit)="getProperies()">
+   
+    <label for="ownerId">Enter Owner ID:</label>
+    <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" required>
+
+
+    <button type="submit">Give me the properties of this OwnerId</button>
+  </form><br/>
+  <div>
+  <form (ngSubmit)="deleteProperty()">
+   
+    <label for="propertyId">Enter property ID:</label>
+    <input type="number" id="propertyId" [(ngModel)]="propertyId" name="propertyId" required>
+
+
+    <button type="submit">Delete the property of this propertyId</button>
+  </form>
+  </div>
 </div>
+<!-- <p>Teeessstt</p> -->
