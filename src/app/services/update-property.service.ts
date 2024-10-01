@@ -7,13 +7,14 @@ import { catchError, Observable, retry, throwError } from 'rxjs';
 })
 export class UpdatePropertyService {
   http = inject(HttpClient);
-  url = 'http://localhost:8080/TechnikonWeb/resources/Owner/property/${property.propertyId}';
 
   constructor() { }
-  putData(data: any): Observable<any> {
+  putData(ownerId: number, data: any) {
     const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json');
-    const url = `${this.url}`;
+      .set('Content-Type', 'application/json')
+    const url = `http://localhost:8080/TechnikonWeb/resources/Admin/property/${ownerId}`;
+    console.log('PUT Request URL:', url);
+    console.log('Data to send:', data);
     return this.http.put(url, JSON.stringify(data), { headers: headers })
       .pipe(retry(1),
         catchError(error => throwError(() => 'Couldn\'t put data on service'))

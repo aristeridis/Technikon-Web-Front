@@ -34,7 +34,7 @@ export class CreatePropertyComponent {
         },
         error: err => {
           console.error('Error creating property:', err);
-          alert('Failed to create property. Please try again.');
+          alert('Couldn\'t update property');
         }
       });
     } else {
