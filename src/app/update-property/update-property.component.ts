@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UpdatePropertyService } from '../services/update-property.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-update-property',
@@ -20,6 +22,7 @@ export class UpdatePropertyComponent {
     deletedProperty: false,
     e9: null
   };
+  constructor(private router: Router) { }
 
   service = inject(UpdatePropertyService);
 
@@ -39,4 +42,8 @@ export class UpdatePropertyComponent {
       alert('Please fill all the necessary fields.');
     }
   }
+  goToHome() {
+    this.router.navigate(['/']);
+  }
 }
+

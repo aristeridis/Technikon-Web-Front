@@ -1,9 +1,12 @@
-<div class="create-property">
+<div class="technikon-btn">
+  <button class='technikon-btn' (click)="goToHome()">Technikon</button>
+</div>
+<div class="homepage">
   <h1>Create Property</h1>
 
-  <form (ngSubmit)="postData()">
-    <label for="ownerId">Owner ID that you wish to create property</label>
-    <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" required><br/>
+  <form class="homepage" (ngSubmit)="postData()">
+    <label class="welcome-message" for="ownerId">Owner ID that you wish to create property</label>
+    <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" required><br/><br/><br/>
     <label for="propertyId">Property ID:</label>
     <input type="number" id="propertyId" [(ngModel)]="property.propertyId" name="propertyId" required>
 
@@ -25,7 +28,8 @@
     <label for="deletedProperty">Deleted Property:</label>
     <input type="checkbox" id="deletedProperty" [(ngModel)]="property.deletedProperty" name="deletedProperty">
 
-    <button type="submit">Submit</button>
+    <button class="btn" type="submit">Create Property
+    </button>
   </form>
 
   <pre>{{ property | json }}</pre>

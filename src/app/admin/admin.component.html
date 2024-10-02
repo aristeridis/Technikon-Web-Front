@@ -1,4 +1,21 @@
-<div admin>
-    <h3>Owners and Properties:</h3>
-    <pre>{{ admin | json }}</pre>
+<div class="technikon-btn">
+  <button class="technikon-btn" (click)="goToHome()">Technikon</button>
+</div>
+
+<div class="homepage">
+  <h2 class="welcome-message">Pending Repairs</h2>
+  
+  <div *ngIf="repairs && repairs.length > 0; else noData">
+    <ul>
+      <li *ngFor="let repair of repairs">
+        <strong>Repair ID:</strong> {{ repair.id }}<br />
+        <strong>Description:</strong> {{ repair.description }}<br />
+        <strong>Status:</strong> {{ repair.status }}<br />
+        <hr />
+      </li>
+    </ul>
+  </div>
+    <ng-template #noData>
+    <p>No pending repairs found.</p>
+  </ng-template>
 </div>

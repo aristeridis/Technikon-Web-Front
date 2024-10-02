@@ -1,28 +1,35 @@
-<div class="owner">
-    <h1>Technikon Web</h1><br/>
-  <h2>Owner Page fanctionality</h2><br/>
-  <form (ngSubmit)="getProperties()">
-   
-    <label for="ownerId">Enter Owner ID:</label>
-    <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" required>
-
-
-    <button type="submit">Give me the properties of this OwnerId</button>
-  </form><br/>
-  <div>
-  <form (ngSubmit)="deleteProperty()">
-   
-    <label for="propertyId">Enter property ID:</label>
-    <input type="number" id="propertyId" [(ngModel)]="propertyId" name="propertyId" required>
-
-
-    <button type="submit">Delete the property of this propertyId</button>
-  </form>
-  </div>
-    <button (click)="goToCreate()">Go to Create</button>
-        <button (click)="goToUpdate()">Go to Update</button>
-
-
-
+<div class="technikon-btn">
+  <button class='technikon-btn' (click)="goToHome()">Technikon</button>
 </div>
-<!-- <p>Teeessstt</p> -->
+
+<div class="homepage">
+  <h2 class="welcome-message">Owner Page Functionality</h2><br/>
+  
+  <form (ngSubmit)="getProperties()">
+    <label for="ownerId">Enter Owner ID: </label>
+    <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" required>
+    <button type="submit" class="btn1">Get Properties of this Owner</button>
+  </form><br/>
+  <form (ngSubmit)="deleteProperty()">
+    <label for="propertyId">Enter Property ID: </label>
+    <input type="number" id="propertyId" [(ngModel)]="propertyId" name="propertyId" required>
+    <button type="submit" class="btn1">Delete this Property</button>
+  </form>
+  <br/>
+<div>
+  <button (click)="goToCreate()" class="btn">Create a Property</button>   
+  <button (click)="goToUpdate()" class="btn">Update a Property</button>
+</div>
+<div *ngIf="properties.length > 0">
+    <h3 class ="welcome-message2">Properties:</h3>
+    <ul>
+      <li *ngFor="let property of properties">
+        Property ID: {{ property.propertyId }} - 
+        Property Code: {{ property.propertyCode }} - 
+        Address: {{ property.address }} - 
+        Year of Construction: {{ property.yearOfConstruction }} - 
+        Property Type: {{ property.propertyType }}
+      </li>
+    </ul>
+  </div>
+</div>

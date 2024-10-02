@@ -1,16 +1,17 @@
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminService {
+  http = inject(HttpClient);
 
   constructor() { }
-  http = inject(HttpClient);
-  getPendingRepairs() {
-    const urlAdminPendingRepairs = "http://localhost:8080/TechnikonWeb/resources/Admin/dayRepairs";
-    return this.http.get(urlAdminPendingRepairs);
-  }
 
+  getPendingRepairs(): Observable<any[]> {
+    const url = 'http://localhost:8080/TechnikonWeb/resources/admin/pendingRepairs';  // Make sure URL is correct
+    return this.http.get<any[]>(url);
+  }
 }

@@ -1,9 +1,93 @@
 .homepage {
-    background-color: rgb(175, 245, 247);
-    padding: 20px;
-    position: absolute;
-    top: 3;
-    left: 15;
-    right: 15;
+    background-color: #343131;
+    color: #EEDF7A;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.technikon-btn {
+    background-color: #A04747;
+    color: #D8A25E;
+    border: none;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.welcome-message {
+    font-size: 2.5rem;
+    color: #EEDF7A;
+    margin-bottom: 30px;
+}
+
+button.btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #D8A25E;
+    color: #343131;
+    border: none;
+    margin: 10px;
+}
+
+button.btn:hover {
+    background-color: #A04747;
+    color: #D8A25E;
+}
+
+.owner {
+    color: #EEDF7A;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.owner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.owner h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.owner label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.owner input {
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #D8A25E;
+    background-color: #343131;
+    color: #EEDF7A;
+}
+
+.owner form {
+    margin-bottom: 20px;
+}
+
+.owner button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #D8A25E;
+    color: #343131;
+    border: none;
+    margin: 10px;
+}
+
+.owner button:hover {
+    background-color: #A04747;
+    color: #D8A25E;
 }

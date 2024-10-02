@@ -1,7 +1,20 @@
-<div class="homepage">
-  <h1>Welcome to Technikon Homepage</h1>
-
-  <button (click)="goToOwner()">Go to Owner</button>
-
-  <button (click)="goToAdmin()">Go to Admin</button>
+<div class="homepage container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <a href="/" class="btn btn-light btn-sm technikon-btn">Technikon</a>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-12 text-center mb-4">
+      <h1 class="welcome-message">Welcome to Technikon Homepage</h1>
+    </div>
+      <h3 class="welcome-message">What's your next move?</h3>
+   
+    
+    <div class="col-12 text-center">
+      <button class="btn btn-primary btn-lg me-3" (click)="goToOwner()">Drive me to Owner</button>
+      <button class="btn btn-primary btn-lg" (click)="goToAdmin()">I want to see the pending repairs</button>
+    </div>
+  </div>
 </div>

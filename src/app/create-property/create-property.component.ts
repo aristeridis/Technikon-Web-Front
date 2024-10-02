@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { CreatePropertyService } from '../services/create-property.service';
 import { JsonPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -22,6 +24,7 @@ export class CreatePropertyComponent {
     deletedProperty: false,
     e9: null
   };
+  constructor(private router: Router) { }
 
   service = inject(CreatePropertyService);
 
@@ -40,5 +43,8 @@ export class CreatePropertyComponent {
     } else {
       alert('Please enter a valid Owner ID');
     }
+  }
+  goToHome() {
+    this.router.navigate(['/']);
   }
 }
