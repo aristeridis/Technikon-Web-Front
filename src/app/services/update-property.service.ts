@@ -9,10 +9,10 @@ export class UpdatePropertyService {
   http = inject(HttpClient);
 
   constructor() { }
-  putData(ownerId: number, data: any) {
+  putData(data: any) {
     const headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-    const url = `http://localhost:8080/TechnikonWeb/resources/Admin/property/${ownerId}`;
+    const url = `http://localhost:8080/TechnikonWeb/resources/Owner/property`;
     console.log('PUT Request URL:', url);
     console.log('Data to send:', data);
     return this.http.put(url, JSON.stringify(data), { headers: headers })

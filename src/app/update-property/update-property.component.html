@@ -2,8 +2,6 @@
   <h1>Update Property</h1>
 
   <form (ngSubmit)="putData()">
-    <label for="ownerId">Owner ID that you wish to update property</label>
-    <input type="number" id="ownerId" [(ngModel)]="ownerId" name="ownerId" required><br/>
     <label for="propertyId">Property ID:</label>
     <input type="number" id="propertyId" [(ngModel)]="property.propertyId" name="propertyId" required>
 

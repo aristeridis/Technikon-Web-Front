@@ -11,7 +11,6 @@ import { UpdatePropertyService } from '../services/update-property.service';
   styleUrl: './update-property.component.css'
 })
 export class UpdatePropertyComponent {
-  ownerId: number | null = null;
   property = {
     propertyId: null,
     propertyCode: null,
@@ -25,8 +24,8 @@ export class UpdatePropertyComponent {
   service = inject(UpdatePropertyService);
 
   putData() {
-    if (this.ownerId) {
-      this.service.putData(this.ownerId,this.property).subscribe({
+    if (this.property.propertyId) {
+      this.service.putData(this.property).subscribe({
         next: response => {
           console.log(response);
           alert('Property updated');
