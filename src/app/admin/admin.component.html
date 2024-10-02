@@ -4,18 +4,21 @@
 
 <div class="homepage">
   <h2 class="welcome-message">Pending Repairs</h2>
-  
-  <div *ngIf="repairs && repairs.length > 0; else noData">
+  <div>
+    <button (click)="getRepairs()" class="btn">Get Pending Repairs</button>
+  </div>
+  <!-- {{repairs | json}} -->
+  <div *ngIf="repairs.length > 0"><br/>
+
+    <h3 class="welcome-message2">Pending Repairs:</h3>
     <ul>
       <li *ngFor="let repair of repairs">
-        <strong>Repair ID:</strong> {{ repair.id }}<br />
-        <strong>Description:</strong> {{ repair.description }}<br />
-        <strong>Status:</strong> {{ repair.status }}<br />
-        <hr />
+       <span class="custom-text"> Repair ID: </span>{{ repair.repairId }} - 
+        <span class="custom-text">RepairType: </span>{{ repair.repairType }} -
+        <span class="custom-text">Repair Short Description:</span>  {{ repair.shortDescription }} - 
+        <span class="custom-text">repairStatus:</span> {{ repair.repairStatus }}
+         <hr/>
       </li>
     </ul>
   </div>
-    <ng-template #noData>
-    <p>No pending repairs found.</p>
-  </ng-template>
 </div>

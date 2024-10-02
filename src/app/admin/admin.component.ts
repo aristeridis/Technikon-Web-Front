@@ -10,28 +10,26 @@ import { Router } from '@angular/router';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
 })
-export class AdminComponent {
+export class AdminComponent{ 
   service = inject(AdminService);
-  repairs: any[] = [];
+  repairs: any[] = [];  
 
   constructor(private router: Router) { }
 
+
   getRepairs(): void {
-    if (this.repairs !== null) {
-      this.service.getPendingRepairs().subscribe({
-        next: (data: any[]) => {
-          this.repairs = data;
-          alert('Repairs fetched successfully');
-        },
-        error: (err: any) => {
-          console.error('Error getting repairs:', err);
-          alert('Failed to get repairs. Please try again.');
-        },
-      });
-    } else {
-      alert('There are no repairs to show');
-    }
+    this.service.getPendingRepairs().subscribe({
+      next: (data: any[]) => {
+        this.repairs = data;
+        console.log('Repairs fetched successfully', data);
+      },
+      error: (err: any) => {
+        console.error('Error getting repairs:', err);
+        alert('Failed to get repairs. Please try again.');
+      },
+    });
   }
+
   goToHome() {
     this.router.navigate(['/']);
   }

@@ -10,8 +10,9 @@ export class AdminService {
 
   constructor() { }
 
-  getPendingRepairs(): Observable<any[]> {
-    const url = 'http://localhost:8080/TechnikonWeb/resources/admin/pendingRepairs';  // Make sure URL is correct
-    return this.http.get<any[]>(url);
+  getPendingRepairs(): Observable<any>{
+    const url = 'http://localhost:8080/TechnikonWeb/resources/Admin/dayRepairs';
+    return this.http.get(url);
   }
 }
+

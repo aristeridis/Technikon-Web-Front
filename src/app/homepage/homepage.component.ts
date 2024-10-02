@@ -18,6 +18,5 @@ export class HomepageComponent {
   }
 
   goToAdmin(): void {
-    window.location.href = 'http://localhost:8080/TechnikonWeb/resources/Admin/dayRepairs';
-  }
+    this.router.navigate(['admin']);  }
 }

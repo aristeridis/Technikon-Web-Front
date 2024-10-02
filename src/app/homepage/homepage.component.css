@@ -38,7 +38,14 @@ button.btn {
     border: none;
     margin: 10px;
 }
+.image{
+    height: 300px;
+    position: fixed;
+    width: 600px;
+    padding-top: 10px;
+    padding-bottom: 50px;
 
+}
 button.btn:hover {
     background-color: #A04747;
     color: #D8A25E;

@@ -10,5 +10,5 @@ export const routes: Routes = [
     { path: 'owner', component: OwnerComponent },
     { path: 'admin', component: AdminComponent },
     { path: 'create-property', component: CreatePropertyComponent },
-    { path: 'update-property', component: UpdatePropertyComponent }
-];
+    { path: 'update-property', component: UpdatePropertyComponent },
+    { path: '**', redirectTo: '' }];

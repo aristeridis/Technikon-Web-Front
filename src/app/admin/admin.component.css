@@ -30,6 +30,17 @@
     margin-bottom: 30px;
 }
 
+.welcome-message2 {
+    font-size: 2rem;
+    color: #A04747;
+    margin-bottom: 30px;
+}
+.custom-text {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
 button.btn {
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -40,6 +51,20 @@ button.btn {
 }
 
 button.btn:hover {
+    background-color: #A04747;
+    color: #D8A25E;
+}
+
+button.btn1 {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+    background-color: #A04747;
+    color: #343131;
+    border: none;
+    margin: 8px;
+}
+
+button.btn1:hover {
     background-color: #A04747;
     color: #D8A25E;
 }
