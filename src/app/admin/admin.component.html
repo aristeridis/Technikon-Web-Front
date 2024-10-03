@@ -11,14 +11,23 @@
   <div *ngIf="repairs.length > 0"><br/>
 
     <h3 class="welcome-message2">Pending Repairs:</h3>
-    <ul>
-      <li *ngFor="let repair of repairs">
-       <span class="custom-text"> Repair ID: </span>{{ repair.repairId }} - 
-        <span class="custom-text">RepairType: </span>{{ repair.repairType }} -
-        <span class="custom-text">Repair Short Description:</span>  {{ repair.shortDescription }} - 
-        <span class="custom-text">repairStatus:</span> {{ repair.repairStatus }}
-         <hr/>
-      </li>
-    </ul>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Repair ID</th>
+          <th>Repair Type</th>
+          <th>Short Description</th>
+          <th>Repair Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let repair of repairs">
+          <td>{{ repair.repairId }}</td>
+          <td>{{ repair.repairType }}</td>
+          <td>{{ repair.shortDescription }}</td>
+          <td>{{ repair.repairStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

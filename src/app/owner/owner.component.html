@@ -21,15 +21,25 @@
   <button (click)="goToUpdate()" class="btn">Update a Property</button>
 </div>
 <div *ngIf="properties.length > 0">
-    <h3 class ="welcome-message2">Properties:</h3>
-    <ul>
-      <li *ngFor="let property of properties">
-        Property ID: {{ property.propertyId }} - 
-        Property Code: {{ property.propertyCode }} - 
-        Address: {{ property.address }} - 
-        Year of Construction: {{ property.yearOfConstruction }} - 
-        Property Type: {{ property.propertyType }}
-      </li>
-    </ul>
-  </div>
+  <h3 class="welcome-message2">Properties:</h3>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Property ID</th>
+        <th>Property Code</th>
+        <th>Address</th>
+        <th>Year of Construction</th>
+        <th>Property Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let property of properties">
+        <td>{{ property.propertyId }}</td>
+        <td>{{ property.propertyCode }}</td>
+        <td>{{ property.address }}</td>
+        <td>{{ property.yearOfConstruction }}</td>
+        <td>{{ property.propertyType }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
